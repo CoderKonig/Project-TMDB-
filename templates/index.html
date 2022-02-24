@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="static/style.css" />
+</head>
+
+<body>
+    <h1>Movie Explorer</h1>
+
+    <div class='container'>
+        <h2>{{title}}</h2>
+        <h3>{{tagline}}</h3>
+        <h4>Genres:</h4>
+        {% for i in range(3) %}
+        <h4>{{genre[i]}}</h4>
+        {% endfor %}
+
+        <img src="{{image}}"/>
+        <p></p>
+        
+        <a href="{{wikiurl}}">Click here to see the Wikipedia Page!</a>
+
+        <p>Refresh the page to see a new movie!</p>
+    </div>
+</body>
+
+
+
+
+
+</html>
+

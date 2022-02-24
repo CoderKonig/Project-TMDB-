@@ -1,0 +1,15 @@
+body{
+    background-color: #e91e63;
+    font-family: Arial;
+    margin: 0 auto;
+    
+}
+
+.container{
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+    border-style: inset;
+    /*background-color: black */
+    
+}
