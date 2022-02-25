@@ -44,11 +44,3 @@ def movie_details():
     tagline = response.json()["tagline"]
 
     return (title, tagline, list(genre), image)
-
-
-#CONFIG_URL = "https://api.themoviedb.org/3/configuration?api_key={API_KEY}" . format(API_KEY= TMDB_KEY)
-
-
-
-    
-        
