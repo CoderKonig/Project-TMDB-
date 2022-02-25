@@ -36,24 +36,24 @@ def index():
      return flask.render_template("login.html")
 
 
-# @app.route('/signin', methods = ["GET","POST"])
-# def signin():
-#     title, tagline, genre, image = movie_details()
-#     # Wiki_URL variable allows me to pass title of the movie to wikiLink so that it can use the API to return a link
-#     Wiki_URL = wikiLink(title)
+@app.route('/signin', methods = ["GET","POST"])
+def signin():
+    title, tagline, genre, image = movie_details()
+    # Wiki_URL variable allows me to pass title of the movie to wikiLink so that it can use the API to return a link
+    Wiki_URL = wikiLink(title)
     
 
 
-#     if flask.request.method == "GET":
-#         # data = flask.request.form
-#         # userExists = Users(username= data["userName"])
-#         u_name = flask.request.form.get('username')
-#         p_word = flask.request.form.get('password')
-#         if Users.query.filter(Users.userName == u_name & Users.password == p_word ):
-#             return flask.render_template( "index.html", details= movie_details, title = title, tagline= tagline, genre= genre, image=image, wikiurl = Wiki_URL )
+    if flask.request.method == "GET":
+        # data = flask.request.form
+        # userExists = Users(username= data["userName"])
+        u_name = flask.request.form.get('username')
+        p_word = flask.request.form.get('password')
+        if Users.query.filter(Users.userName == u_name & Users.password == p_word ):
+            return flask.render_template( "index.html", details= movie_details, title = title, tagline= tagline, genre= genre, image=image, wikiurl = Wiki_URL )
 
 
-    # return flask.render_template( "index.html", details= movie_details, title = title, tagline= tagline, genre= genre, image=image, wikiurl = Wiki_URL )
+    return flask.render_template( "index.html", details= movie_details, title = title, tagline= tagline, genre= genre, image=image, wikiurl = Wiki_URL )
 
 
 #Create a method for Register, type in username and password and the DB records the Username
