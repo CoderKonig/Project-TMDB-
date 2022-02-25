@@ -31,10 +31,6 @@ db.create_all()
 
 movie_list = 372058, 27205, 496243
 
-@app.route('/')
-def index():
-     return flask.render_template("login.html")
-
 
 @app.route('/signin', methods = ["GET","POST"])
 def signin():
