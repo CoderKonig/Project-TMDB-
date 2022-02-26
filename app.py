@@ -70,12 +70,13 @@ def signin():
         print(flask.request.form.get('username'))
         u_name= flask.request.form.get('username')
         if Users.query.filter_by(userName=u_name).first():
+            flash("User Authenticated")
             print("User Found")
             return flask.render_template( "index.html", details= movie_details, title = title, tagline= tagline, genre= genre, image=image, wikiurl = Wiki_URL, movie_id=movie_id )
             
         else:  
-            flask.flash("User Not Found")
-            print("User not found", u_name)
+            flash("User Not Found")
+            print("User Not found", u_name)
             return flask.render_template("login.html")
 
 
@@ -118,6 +119,13 @@ def review():
       )
     #  reviews= reviews, 
     #  lengthreviews=lengthreviews )
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('You were logged out.')
+    return redirect(url_for('signin'))
 
 
 
