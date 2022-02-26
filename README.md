@@ -8,7 +8,7 @@ Project Milestone 2 Flask/TMDB
 
 ## Issues Solved
 - Some of the issues I had faced were flask-login and how to implement it into my project, looking at the forms helped to an exstent but I had to watch a couple of tutorial videos to see how login manager was implemented.
-- The next issue I faced was submitting my forms to the Database I created, homework 6 helped me greatly with reading and writing and I had to adjust my code a bit to make sure everything would work for this flask app.
+- The next issue I faced was submitting my forms to the Database I created, homework 6 helped me greatly with reading and writing and I had to adjust my code a bit to make sure everything would work for this flask app. Reading from the database gave me alot of issues relating to jinja and not being able to iteralte through the length of an array of all the items in the database. Eventually debugging and seeing which pieces of code work and run by using print statements to show if my database was returning items I needed helped me figure the issue out.
 - Finally I ran into alot of different errors with jinja and showing the reviews/ratings on the bottom of my page because there were variables that would not able to be iterated through to show all reviews, eventually tweaking with jinja helped me overcome the errors when returning my database and looking up jinja syntax.
 
 ## Copying this Repo and Running it on Your Machine
@@ -27,11 +27,12 @@ If you choose to run it on Heroku:
 
 7. Login to Heroku using `heroku login -1`.
 8. Create your own Heroku app by using `heroku create`.
-9. If you want to make changes to the code and run them on your own Heroku server then push your code with `git push heroku main`.
-10. Add your own personal API key and the secret key to heroku dashboard in Settings and "Reveal config Vars".
-11. Run `heroku open`.
+9. Create a Postgres Database in heroku using `heroku addons:create heroku-postgresql: "app name"`
+10. If you want to make changes to the code and run them on your own Heroku server then push your code with `git push heroku main`.
+11. Add your own personal API key and the secret key to heroku dashboard in Settings and "Reveal config Vars".
+12. Run `heroku open`.
 
-12. You have successfuly ran an edited version of the repo on your own heroku serve.
+13. You have successfuly ran an edited version of the repo on your own heroku serve.
 
 
 Link to Heroku Website: `http://shrouded-falls-44837.herokuapp.com`
