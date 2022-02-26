@@ -14,6 +14,8 @@ load_dotenv(find_dotenv())
 app = flask.Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+if app.config['SQLALCHEMY_DATABASE_URI'].startswith("postgres://"):
+    app.config['SQLALCHEMY_DATABASE_URI'] = app.config["SQLALCHEMY_DATABASE_URI"].replace("postgres://", "postgresql://")
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")   
 
 # Gets rid of a warning
