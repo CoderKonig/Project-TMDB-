@@ -22,7 +22,33 @@
         <a href="{{wikiurl}}">Click here to see the Wikipedia Page!</a>
 
         <p>Refresh the page to see a new movie!</p>
+
+        <h2>Write a review or comment!</h2>
+        <form method="POST" action="/reviews">
+
+            <input type="text" id = "movie_id" name=" movie_id" value="{{movie_id}}" readonly>
+            <br>
+            <br>
+            <textarea rows = "5" cols = "60" name = "comment">Write a Review and Specify Movie! </textarea>
+            <!-- <input type="text" name="comment" placeholder="Write a review!" style="height:120px; width:400px;"> -->
+            </br>
+            <input type="text" name="rating"   placeholder="Leave a 1-5 Rating!" style="height:50px; width:200px;">
+            <input type="submit" value="Submit">
+            
+
+        </form>
+
+        {% for i in range(AllReviews | length) %}
+        
+            <ul><b>{{AllReviews[i].messages}} {{AllReviews[i].rating}}</b></ul>
+        
+            
+        {% endfor %}
     </div>
+
+
+
+
 </body>
 
 

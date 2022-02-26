@@ -20,12 +20,14 @@ CONFIG_URL = "https://api.themoviedb.org/3/configuration?api_key={API_KEY}" . fo
 def movie_details():
     #Put the Base URL inside the function so I can do random.choice for the list of Movie ID's 
     movie_list = 372058, 27205, 496243
-    BASE_URL = "https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}" . format(movie_id= random.choice(movie_list), API_KEY=TMDB_KEY)
+    movie_id= random.choice(movie_list)
+    BASE_URL = "https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}" . format(movie_id= movie_id, API_KEY=TMDB_KEY)
 
     params = {'api-key': os.getenv('TMDB_KEY')}
     response = requests.get(BASE_URL)
 
     data= response.json()
+
 
     #the below function get_genre is basically getting the names from inside the Genres Array
     genreName= data['genres']
@@ -43,4 +45,4 @@ def movie_details():
     title = response.json()["title"]
     tagline = response.json()["tagline"]
 
-    return (title, tagline, list(genre), image)
+    return (title, tagline, list(genre), image, movie_id )
